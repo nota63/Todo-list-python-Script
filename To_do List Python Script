@@ -1,0 +1,50 @@
+# project todo list app
+
+# welcome massage
+
+w='welcome to our app !\n keep noe and keep grow'
+print(w.title())
+
+# funtions
+
+def add_task(tasks, task):
+    tasks.append(task)
+    print(f' The Task {task} Has Been Add Success!')
+
+def remove_task(tasks, task):
+    if task in tasks:
+      tasks.remove(task)
+      print(f'The Task {task} has Been Removed!')
+    else:
+       print('Task not Found!')
+
+def view_task(tasks, task):
+    if tasks:
+      for index, task in enumerate(tasks, start=1):
+        print(f'Your tasks:\n{index} + {task}')
+    else:
+       print('You dont Have Tasks To View!')
+def main():
+   tasks = []
+
+   while True:
+         menu='Menu\n 1)add_task\n 2)remove_task\n 3) view_task'
+         print(menu)
+    
+         user=int(input('Enter The Index Number To Start With? : '))
+         if user ==1:
+            task=input('Enter Your Task:')
+            add_task(tasks,task)
+         
+         elif user ==2:
+             delT=input('Enter The Task To Remove:')             
+             remove_task(tasks, task)
+
+         elif user == 3:
+            view_task(tasks, task)
+
+         elif user == 4:
+             print('GoodBye!')
+
+if __name__ == "__main__":
+   main()
